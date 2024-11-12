@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart'; // Nhập thư viện Flutter Material
 import 'Setting.dart';
-
+import 'mytrip.dart';
 
 class HomePage extends StatelessWidget { // Lớp HomePage kế thừa từ StatelessWidget
   @override
@@ -28,15 +28,25 @@ class HomePage extends StatelessWidget { // Lớp HomePage kế thừa từ Stat
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          if (index == 4) { // Kiểm tra nếu người dùng nhấn vào nút Settings
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Setting()),
-            );
-          }
-        },
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: (index) {
+              if (index == 1) { // Kiểm tra nếu người dùng nhấn vào nút My trip
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  Mytrip()), // Điều hướng tới MyTrip
+                );
+              } else if (index == 4) { // Kiểm tra nếu người dùng nhấn vào nút Settings
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  const Setting()), // Điều hướng tới Setting
+                );
+              } else if (index == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              }
+            },
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.explore, size: 28, color: Colors.black), // biểu tượng 'explore'
