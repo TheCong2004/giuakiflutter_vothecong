@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart'; // Nhập thư viện Flutter Material
 import 'Setting.dart';
 import 'mytrip.dart';
+import 'blog.dart';
+import 'journeys.dart';
 
 class HomePage extends StatelessWidget { // Lớp HomePage kế thừa từ StatelessWidget
   @override
@@ -44,6 +46,16 @@ class HomePage extends StatelessWidget { // Lớp HomePage kế thừa từ Stat
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => HomePage()),
+                );
+               } else if (index == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Blog()),
+                );
+                 } else if (index == 3) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Journeys()),
                 );
               }
             },
